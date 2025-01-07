@@ -22,3 +22,4 @@ dependencyResolutionManagement {
 rootProject.name = "Aplikasi Spotify"
 include(":app")
 include(":core")
+include(":favorite")
