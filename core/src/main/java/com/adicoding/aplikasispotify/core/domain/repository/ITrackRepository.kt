@@ -10,5 +10,5 @@ interface ITrackRepository {
     fun getFavoriteTracks(): Flow<List<Track>>
     suspend fun addFavoriteTrack(track: Track)
     suspend fun removeFavoriteTrack(track: Track)
-    suspend fun getPlaylists(token: String): List<Playlist>
+    suspend fun getPlaylists(token: String, playlistId: String): List<Playlist>
 }

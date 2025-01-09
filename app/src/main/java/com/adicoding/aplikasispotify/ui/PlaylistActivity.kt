@@ -22,8 +22,9 @@ class PlaylistActivity : AppCompatActivity() {
 
         setupRecyclerView()
 
-        val token = "your_spotify_token_here"
-        viewModel.getPlaylists(token).observe(this) { playlists ->
+        val token = "vpCCQHTwyJHoYyuN"
+        val playlistId = "37i9dQZEVXbNG2KDcFcKOF"
+        viewModel.getPlaylists(token, playlistId).observe(this) { playlists ->
             if (playlists != null) {
                 playlistAdapter.submitList(playlists)
             } else {

@@ -34,9 +34,8 @@ class TrackRepository(
         TODO("Not yet implemented")
     }
 
-    override suspend fun getPlaylists(token: String): List<Playlist> {
-        return remoteDataSource.getPlaylists(token).map { playlistResponse ->
-            playlistResponse.toDomain()
-        }
+    override suspend fun getPlaylists(token: String, playlistId: String): List<Playlist> {
+        val playlistResponse = remoteDataSource.getPlaylists(token, playlistId)
+        return listOf(playlistResponse.toDomain())
     }
 }

@@ -4,10 +4,11 @@ import com.adicoding.aplikasispotify.core.data.source.remote.response.PlaylistRe
 import com.adicoding.aplikasispotify.core.domain.model.Playlist
 
 fun PlaylistResponse.toDomain(): Playlist {
+    val imageUrl = this.images?.firstOrNull()?.url ?: ""
     return Playlist(
-        id = this.id,
-        name = this.name,
-        description = this.description,
-        imageUrl = this.imageUrl
+        id = this.id.orEmpty(),
+        name = this.name.orEmpty(),
+        description = this.description.orEmpty(),
+        imageUrl = imageUrl
     )
 }

@@ -9,7 +9,7 @@ class TrackRemoteDataSource(private val apiService: ApiService) {
         return apiService.getSavedTracks("Bearer $token")
     }
 
-    suspend fun getPlaylists(token: String): List<PlaylistResponse> {
-        return apiService.getPlaylists("Bearer $token")
+    suspend fun getPlaylists(token: String, playlistId: String): PlaylistResponse {
+        return apiService.getPlaylists("Bearer $token", playlistId)
     }
 }

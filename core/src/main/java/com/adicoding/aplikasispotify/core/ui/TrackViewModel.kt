@@ -9,7 +9,7 @@ import kotlinx.coroutines.Dispatchers
 class TrackViewModel(private val repository: ITrackRepository) : ViewModel() {
 //    fun getTracks(token: String) = repository.getTracks(token).asLiveData(Dispatchers.IO)
     fun getFavoriteTracks() = repository.getFavoriteTracks().asLiveData(Dispatchers.IO)
-    fun getPlaylists(token: String) = liveData(Dispatchers.IO) {
-        emit(repository.getPlaylists(token))
+    fun getPlaylists(token: String, playlistId: String) = liveData(Dispatchers.IO) {
+        emit(repository.getPlaylists(token, playlistId))
     }
 }
