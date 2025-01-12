@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.adicoding.aplikasispotify.databinding.ActivityMainBinding
+import com.adicoding.aplikasispotify.ui.myplaylists.MyPlaylistsFragment
 import com.adicoding.aplikasispotify.ui.PlaylistFragment
 
 class MainActivity : AppCompatActivity() {
@@ -15,20 +16,24 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        setupBottomNavigation()
-
         // Set default fragment
-        loadFragment(PlaylistFragment())
-    }
+//        loadFragment(PlaylistFragment())
+        loadFragment(MyPlaylistsFragment())
 
-    private fun setupBottomNavigation() {
-        binding.bottomNavigation.setOnItemSelectedListener { item ->
-            when (item.itemId) {
-                R.id.nav_playlist -> {
-                    loadFragment(PlaylistFragment())
+        binding.bottomNavigationView.setOnItemSelectedListener { menuItem ->
+            when (menuItem.itemId) {
+                R.id.nav_home -> {
+                    loadFragment(MyPlaylistsFragment())
                     true
                 }
-                // Tambahkan fragmen lain sesuai kebutuhan
+                R.id.nav_playlists -> {
+                    loadFragment(MyPlaylistsFragment())
+                    true
+                }
+//                R.id.nav_profile -> {
+//                    loadFragment(ProfileFragment())
+//                    true
+//                }
                 else -> false
             }
         }

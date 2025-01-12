@@ -6,5 +6,5 @@ import com.adicoding.aplikasispotify.core.domain.repository.ITrackRepository
 import kotlinx.coroutines.flow.Flow
 
 class FavoriteViewModel(private val repository: ITrackRepository) : ViewModel() {
-    val favoriteTracks: Flow<List<Track>> = repository.getFavoriteTracks()
+//    val favoriteTracks: Flow<List<Track>> = repository.getFavoriteTracks()
 }

@@ -9,6 +9,7 @@ fun PlaylistResponse.toDomain(): Playlist {
         id = this.id.orEmpty(),
         name = this.name.orEmpty(),
         description = this.description.orEmpty(),
-        imageUrl = imageUrl
+        imageUrl = imageUrl,
+        tracks = this.tracks?.items?.mapNotNull { it?.track } ?: emptyList()
     )
 }

@@ -10,6 +10,7 @@ import org.koin.dsl.module
 
 val appModule = module {
     single<ITrackRepository> { TrackRepository(get(), get()) }
+    factory { TrackViewModel(get()) }
 
     // Provide the ViewModel
     viewModel { TrackViewModel(get()) }
